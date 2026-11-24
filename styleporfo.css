@@ -1,0 +1,332 @@
+
+/* =========================
+   CONFIGURATION GÉNÉRALE de la page
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e9edf2;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* =========================
+   HEADER en haut de page
+========================= */
+header {
+    background: #202b3c;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 5px solid #4d8de0;
+}
+header h1 {
+    font-size: 34px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+header > p {
+    color: #91bdf5;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   NAVIGATION a travers la page
+========================= */
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+}
+nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 9px 16px;
+    border: 1px solid #52647c;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+nav a:hover {
+    background: #4d8de0;
+    border-color: #4d8de0;
+}
+
+/* =========================
+   CONTENU PRINCIPAL de la page
+========================= */
+main {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 20px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        "accueil accueil"
+        "apropos parcours"
+        "competences competences"
+        "projets projets"
+        "contact contact";
+
+    gap: 25px;
+}
+
+/* =========================
+   SECTIONS de la page
+========================= */
+section {
+    background: white;
+    padding: 25px;
+    border: 1px solid #dce2e9;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+section h2 {
+    color: #202b3c;
+    font-size: 21px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #4d8de0;
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+}
+section p {
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+/* =========================
+   POSITIONNEMENT GRID sur la page
+========================= */
+#accueil {
+    grid-area: accueil;
+    text-align: center;
+    padding: 45px 25px;
+    background: #fdfefe;
+}
+#accueil h2 {
+    font-size: 28px;
+}
+#apropos {
+    grid-area: apropos;
+}
+#parcours {
+    grid-area: parcours;
+}
+#competences {
+    grid-area: competences;
+}
+#projets {
+    grid-area: projets;
+}
+#contact {
+    grid-area: contact;
+}
+
+/* =========================
+   BOUTONS ET LIENS de la page
+========================= */
+#accueil > a,
+article > a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 18px;
+    background: #4d8de0;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+#accueil > a:hover,
+article > a:hover {
+    background: #315f99;
+}
+
+/* =========================
+   COMPÉTENCES apprises
+========================= */
+#competences {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+#competences h2 {
+    grid-column: 1 / -1;
+}
+article {
+    border: 1px solid #e1e6ed;
+    border-radius: 8px;
+    padding: 18px;
+    background: #fafbfd;
+}
+article h3 {
+    color: #315f99;
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+/* =========================
+   LISTES de la page
+========================= */
+article ul {
+    list-style: none;
+}
+article li {
+    padding: 7px 0;
+    border-bottom: 1px solid #e5e9ef;
+    font-size: 14px;
+}
+article li:last-child {
+    border-bottom: none;
+}
+article li::before {
+    content: "▸";
+    color: #4d8de0;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* =========================
+   PROJETS qui sont en cours de developpement
+========================= */
+#projets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+#projets h2 {
+    grid-column: 1 / -1;
+}
+#projets article {
+    display: flex;
+    flex-direction: column;
+}
+#projets article p:last-of-type {
+    color: #315f99;
+    font-size: 13px;
+    font-weight: bold;
+}
+#projets article > a {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+/* =========================
+   IMAGES DES PROJETS (en cours encore)
+========================= */
+figure {
+    margin-bottom: 15px;
+}
+figure img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #dce2e9;
+    background: #e9edf2;
+}
+figcaption {
+    font-size: 12px;
+    color: #777;
+    margin-top: 6px;
+}
+
+/* =========================
+   CONTACT haut de page
+========================= */
+#contact address {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    font-style: normal;
+    margin-top: 20px;
+}
+#contact address p {
+    background: #f5f7fa;
+    border: 1px solid #e1e6ed;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+#contact address a {
+    color: #315f99;
+    text-decoration: none;
+}
+#contact address a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   FOOTER fin de page
+========================= */
+footer {
+    background: #202b3c;
+    color: #b9c5d5;
+    text-align: center;
+    padding: 22px;
+    border-top: 5px solid #4d8de0;
+    font-size: 13px;
+}
+footer a {
+    display: inline-block;
+    color: #91bdf5;
+    text-decoration: none;
+    margin-top: 5px;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE version diffenrente
+========================= */
+
+@media screen and (max-width: 750px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "accueil"
+            "apropos"
+            "parcours"
+            "competences"
+            "projets"
+            "contact";
+        margin: 20px auto;
+        gap: 15px;
+    }
+    #competences {
+        grid-template-columns: 1fr;
+    }
+    #projets {
+        grid-template-columns: 1fr;
+    }
+    #contact address {
+        grid-template-columns: 1fr;
+    }
+    header h1 {
+        font-size: 26px;
+    }
+    nav ul {
+        gap: 7px;
+    }
+    nav a {
+        padding: 8px 11px;
+        font-size: 12px;
+    }
+    section {
+        padding: 18px;
+    }
+}
