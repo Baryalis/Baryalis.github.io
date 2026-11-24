@@ -1,0 +1,207 @@
+
+/* =========================
+   CONFIGURATION GÉNÉRALE de la page
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e9edf2;
+    color: #333;
+    line-height: 1.6;
+    padding: 40px 20px;
+}
+
+/* =========================
+   CONTENEUR PRINCIPAL de la page
+========================= */
+body > header,
+main,
+body > footer {
+    max-width: 1000px;
+    margin: auto;
+}
+body > header {
+    background: #202b3c;
+    color: white;
+    padding: 35px;
+    border-radius: 12px 12px 0 0;
+    border-bottom: 5px solid #4d8de0;
+}
+header h1 {
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+header h2 {
+    font-size: 18px;
+    color: #91bdf5;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+address {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 20px;
+    font-style: normal;
+    font-size: 14px;
+}
+address a {
+    color: #91bdf5;
+    text-decoration: none;
+}
+address a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   GRILLE PRINCIPALE de la page
+========================= */
+main {
+    background: white;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 25px;
+}
+
+/* =========================
+   SECTIONS de la page
+========================= */
+section {
+    border: 1px solid #dce2e9;
+    border-radius: 8px;
+    padding: 20px;
+    background: #ffffff;
+}
+section h2 {
+    color: #202b3c;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #4d8de0;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   ARTICLES dans la page
+========================= */
+article {
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e9ef;
+}
+article:last-child {
+    border-bottom: none;
+}
+article h3 {
+    font-size: 16px;
+    color: #315f99;
+    margin-bottom: 5px;
+}
+article p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* =========================
+   LISTES dans la page
+========================= */
+ul {
+    list-style: none;
+}
+li {
+    font-size: 14px;
+    padding: 6px 0;
+    border-bottom: 1px solid #edf0f4;
+}
+li:last-child {
+    border-bottom: none;
+}
+li::before {
+    content: "▸";
+    color: #4d8de0;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* =========================
+   POSITIONNEMENT DES SECTIONS en grille
+========================= */
+main {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        "profil competences"
+        "formation qualites"
+        "langues interets"
+        "projets projets";
+}
+/* Rangée 1 */
+#profil {
+    grid-area: profil;
+}
+#competences {
+    grid-area: competences;
+}
+/* Rangée 2 */
+#formation {
+    grid-area: formation;
+}
+
+#qualites {
+    grid-area: qualites;
+}
+/* Rangée 3 */
+#langues {
+    grid-area: langues;
+}
+#interets {
+    grid-area: interets;
+}
+/* Dernière rangée */
+#projets {
+    grid-area: projets;
+}
+
+/* =========================
+   FOOTER design
+========================= */
+
+footer {
+    background: #202b3c;
+    color: #b9c5d5;
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+    border-radius: 0 0 12px 12px;
+}
+
+/* =========================
+   RESPONSIVE Version differente
+========================= */
+
+@media screen and (max-width: 700px) {
+    body {
+        padding: 15px;
+    }
+    main {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+    section {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+    }
+    address {
+        grid-template-columns: 1fr;
+    }
+    header {
+        padding: 25px;
+    }
+    header h1 {
+        font-size: 25px;
+    }
+}
