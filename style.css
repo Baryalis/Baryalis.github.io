@@ -1,6 +1,6 @@
 
 /* =========================
-   CONFIGURATION GÉNÉRALE de la page
+   CONFIGURATION GÉNÉRALE
 ========================= */
 * {
     margin: 0;
@@ -16,7 +16,7 @@ body {
 }
 
 /* =========================
-   CONTENEUR PRINCIPAL de la page
+   CONTENEUR PRINCIPAL
 ========================= */
 body > header,
 main,
@@ -24,8 +24,12 @@ body > footer {
     max-width: 1000px;
     margin: auto;
 }
+
+/* =========================
+   HEADER
+========================= */
 body > header {
-    background: #202b3c;
+    background: rgba(32, 43, 60, 0.85);
     color: white;
     padding: 35px;
     border-radius: 12px 12px 0 0;
@@ -58,24 +62,34 @@ address a:hover {
 }
 
 /* =========================
-   GRILLE PRINCIPALE de la page
+   GRILLE PRINCIPALE
 ========================= */
 main {
-    background: white;
+    background: rgba(255, 255, 255, 0.65);
     padding: 30px;
+
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-areas:
+        "profil competences"
+        "formation qualites"
+        "langues interets"
+        "projets projets";
+
     gap: 25px;
 }
 
 /* =========================
-   SECTIONS de la page
+   SECTIONS
 ========================= */
 section {
-    border: 1px solid #dce2e9;
+    border: 1px solid rgba(220, 226, 233, 0.8);
     border-radius: 8px;
     padding: 20px;
-    background: #ffffff;
+
+    /* Transparence des sections */
+    background: rgba(255, 255, 255, 0.75);
 }
 section h2 {
     color: #202b3c;
@@ -88,11 +102,11 @@ section h2 {
 }
 
 /* =========================
-   ARTICLES dans la page
+   ARTICLES
 ========================= */
 article {
     padding: 12px 0;
-    border-bottom: 1px solid #e5e9ef;
+    border-bottom: 1px solid rgba(229, 233, 239, 0.8);
 }
 article:last-child {
     border-bottom: none;
@@ -108,7 +122,7 @@ article p {
 }
 
 /* =========================
-   LISTES dans la page
+   LISTES
 ========================= */
 ul {
     list-style: none;
@@ -116,7 +130,7 @@ ul {
 li {
     font-size: 14px;
     padding: 6px 0;
-    border-bottom: 1px solid #edf0f4;
+    border-bottom: 1px solid rgba(237, 240, 244, 0.8);
 }
 li:last-child {
     border-bottom: none;
@@ -129,16 +143,8 @@ li::before {
 }
 
 /* =========================
-   POSITIONNEMENT DES SECTIONS en grille
+   POSITIONNEMENT DES SECTIONS
 ========================= */
-main {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-        "profil competences"
-        "formation qualites"
-        "langues interets"
-        "projets projets";
-}
 /* Rangée 1 */
 #profil {
     grid-area: profil;
@@ -150,7 +156,6 @@ main {
 #formation {
     grid-area: formation;
 }
-
 #qualites {
     grid-area: qualites;
 }
@@ -167,11 +172,10 @@ main {
 }
 
 /* =========================
-   FOOTER design
+   FOOTER
 ========================= */
-
 footer {
-    background: #202b3c;
+    background: rgba(32, 43, 60, 0.85);
     color: #b9c5d5;
     text-align: center;
     padding: 15px;
@@ -180,20 +184,42 @@ footer {
 }
 
 /* =========================
-   RESPONSIVE Version differente
+   RESPONSIVE - MOBILE
 ========================= */
 
 @media screen and (max-width: 700px) {
     body {
         padding: 15px;
+
+        /* Adaptation du fond sur mobile */
+        background-position: center;
+        background-attachment: scroll;
+        background-size: cover;
     }
     main {
         grid-template-columns: 1fr;
+
+        /* Une seule colonne */
+        grid-template-areas:
+            "profil"
+            "competences"
+            "formation"
+            "qualites"
+            "langues"
+            "interets"
+            "projets";
+
         padding: 15px;
+
+        /* Plus de transparence */
+        background: rgba(255, 255, 255, 0.45);
     }
     section {
-        grid-column: 1 !important;
-        grid-row: auto !important;
+        grid-column: 1;
+        grid-row: auto;
+
+        /* Sections plus transparentes */
+        background: rgba(255, 255, 255, 0.60);
     }
     address {
         grid-template-columns: 1fr;
